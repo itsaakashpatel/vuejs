@@ -1,0 +1,24 @@
+{
+  "name": "bulma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "bulma": "^0.7.1",
+    "bulma-start": "0.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsaakashpatel/vuejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsaakashpatel/vuejs/issues"
+  },
+  "homepage": "https://github.com/itsaakashpatel/vuejs#readme"
+}

@@ -10,39 +10,50 @@
 </head>
 
 <body>
+    <section class="section">
+        <div id="root" class="container is-fluid">
 
-    <div id="root" class="container">
+            <h1> Vue Js App</h1>
 
-        Firstname:
-        <input type="text" id="name" v-model="msg">
+            <div class="columns">
+                <div class="column">
+                    <h2>You </h2>
+                    <br>
+                    <progress class="progress is-success is-large" value="" max="100">{{ playerhealth }}</progress>
 
-        <p> This is your message: {{msg}}</p>
+                </div>
 
-        <ul>
-            <li v-for="name in names">{{name}}</li>
-        </ul>
+                <div class="column">
+                    <h2>Monster </h2>
+                    <br>
+                    <progress class="progress is-danger is-large" value="40" max="100"></progress>
+                </div>
 
-        <button @click="addName"> Add Me</button>
+            </div>
 
-        <card title="hello world" text="no text found yet"></card>
+            <a class="button is-link is-rounded is-large" id="start" @click="startGame">Start New Game</a>
+            <div>
+                <section class="section">
+                    <a class="button is-primary" id="attack">Attack</a>
+                    <a class="button is-warning" id="special">Special Attack</a>
+                    <a class="button is-info" id="heal">Heal</a>
+                    <a class="button is-success" id="give">Give Up</a>
+                </section>
 
-        <card title="Nothing to worry about" text="all set"></card>
+            </div>
 
-        <div align="center">
-            <h2> Modal example</h2>
+            <section class="section">
+                <ul>
+                    <li>
 
-            <modal v-if="showModal" @close="showModal = false"></modal>
-
-            <button class="button is-success" @click="showModal = true">Click me!</button>
+                    </li>
+                </ul>
+            </section>
 
         </div>
-
-
-
-
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <script src="main.js"> </script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        <script src="main.js"> </script>
+    </section>
 </body>
 
 </html>
