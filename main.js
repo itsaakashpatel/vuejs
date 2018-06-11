@@ -1,9 +1,7 @@
 new Vue({
   el: "#root",
   data: {
-    playerhealth: 100,
-    monsterhealth: 100,
-    isgamerunning: false
+    title: "Hello"
   },
 
   methods: {

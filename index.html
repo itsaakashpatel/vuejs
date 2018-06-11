@@ -1,59 +1,12 @@
+<!DOCTYPE html>
 <html>
-
-<head>
-
-    <title>
-        Vue Learning
-    </title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
-</head>
-
-<body>
-    <section class="section">
-        <div id="root" class="container is-fluid">
-
-            <h1> Vue Js App</h1>
-
-            <div class="columns">
-                <div class="column">
-                    <h2>You </h2>
-                    <br>
-                    <progress class="progress is-success is-large" value="" max="100">{{ playerhealth }}</progress>
-
-                </div>
-
-                <div class="column">
-                    <h2>Monster </h2>
-                    <br>
-                    <progress class="progress is-danger is-large" value="40" max="100"></progress>
-                </div>
-
-            </div>
-
-            <a class="button is-link is-rounded is-large" id="start" @click="startGame">Start New Game</a>
-            <div>
-                <section class="section">
-                    <a class="button is-primary" id="attack">Attack</a>
-                    <a class="button is-warning" id="special">Special Attack</a>
-                    <a class="button is-info" id="heal">Heal</a>
-                    <a class="button is-success" id="give">Give Up</a>
-                </section>
-
-            </div>
-
-            <section class="section">
-                <ul>
-                    <li>
-
-                    </li>
-                </ul>
-            </section>
-
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-        <script src="main.js"> </script>
-    </section>
-</body>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>vue</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
