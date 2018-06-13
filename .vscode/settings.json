@@ -1,7 +1,13 @@
 {
     "eslint.validate": [
-        "javascript",
+        {
+            "language":[
+                "javascript",
         "javascriptreact",
         "vue"
+            ],
+            "autofix": true
+        }
+        
       ]
 }
