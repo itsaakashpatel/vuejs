@@ -23,7 +23,7 @@
 import Userdetail from './Userdetail'
 import Useredit from './Useredit'
 export default {
-  data: () => {
+  data () {
     return {
       name: 'Aakash',
       age: 21

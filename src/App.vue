@@ -1,48 +1,47 @@
 <template>
 <div id="app">
-    <router-view/>
-<app-quote></app-quote>
-<app-user></app-user>
-    <div class="row">
-      <div class="col-md-4">
-        <button class="btn btn-primary" @click="isSelected = 'app-quote'">Quote</button>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-info" @click="isSelected = 'app-info'">Info</button>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-warning" @click="isSelected = 'app-donate'">Donate</button>
-      </div>
-    </div>
-    <component :is="isSelected">
-      <p>You are welcome!</p>
-    </component>
+  <div class="container">
+        <router-view/>
+        <animations></animations>
+    <app-new-quote @newquoteadded="quotePush" :current="current" :max="max"></app-new-quote>
+    <app-quote-grid :quotes="quotes"></app-quote-grid>
+    <app-user></app-user>
+  </div>
 </div>
 </template>
 
 <script>
 import User from './components/User.vue'
-import Quote from './components/Quote.vue'
-import Info from './components/Info.vue'
-import Donate from './components/Donate.vue'
+import QuoteGrid from './components/QuoteGrid.vue'
+import NewQuote from './components/NewQuote.vue'
+import Animations from './components/Animations.vue'
 export default {
-  data: () => {
+  data () {
     return {
-      name: 'App',
-      title: 'You are awesome',
-      isSelected: 'app-quote'
+      quotes: ['hello user'],
+      max: 10,
+      current: 1
     }
   },
   components: {
     'app-user': User,
-    'app-quote': Quote,
-    'app-info': Info,
-    'app-donate': Donate
+    'app-quote-grid': QuoteGrid,
+    'app-new-quote': NewQuote,
+    'animations': Animations
+  },
+  methods: {
+    quotePush (quote) {
+      if (this.current >= this.max) {
+        return alert('YOu have reached the limit!')
+      }
+      this.quotes.push(quote)
+      this.current++
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

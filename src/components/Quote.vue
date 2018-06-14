@@ -1,42 +1,34 @@
 <template>
-<div class="container">
-    <div>
-        <h2> Quotes Hub </h2>
-        <p>Max is 10</p>
-        <div class="progress">
-          <div class="progress-bar" :style="{width: current*10 + '%'}">{{ current }}</div>
-        </div>
-        <hr>
-          <h3>Input Your Quote</h3>
-          <input type="text" v-model="data">
-          <button class="btn btn-primary" @click="Add">Add</button>
-    </div>
-    <app-info></app-info>
+<div class="row">
+  <div class="col-md-4 col-lg-3">
+      <div class="card">
+  <div class="card-body"><slot></slot></div>
+</div>
+<h2>Filters Demo</h2>
+<input type="text" v-model="filterText">
+<ul>
+  <li v-for="name in filterNames" :key="name">{{ name }}</li>
+</ul>
+   </div>
 </div>
 </template>
 <script>
-import Info from './Info.vue'
 export default {
-  props: ['quote'],
-  data: () => {
+  data () {
     return {
-      max: 10,
-      current: 0,
-      textdata: 'You are writing...'
+      names: ['aakash', 'anant', 'chetan', 'khemu'],
+      filterText: ''
     }
   },
-  methods: {
-    Add () {
+  computed: {
+    filterNames () {
+      return this.names.filter((element) => {
+        return element.match(this.filterText)
+      })
     }
-  },
-  components: {
-    'app-info': Info
   }
 }
-
 </script>
-<style scoped>
-button {
-  margin: 25px;
-}
+<style>
+
 </style>
