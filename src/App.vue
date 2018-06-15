@@ -1,11 +1,12 @@
 <template>
 <div id="app">
   <div class="container">
-        <router-view/>
         <animations></animations>
     <app-new-quote @newquoteadded="quotePush" :current="current" :max="max"></app-new-quote>
     <app-quote-grid :quotes="quotes"></app-quote-grid>
     <app-user></app-user>
+    <app-http></app-http>
+     <router-view/>
   </div>
 </div>
 </template>
@@ -15,6 +16,7 @@ import User from './components/User.vue'
 import QuoteGrid from './components/QuoteGrid.vue'
 import NewQuote from './components/NewQuote.vue'
 import Animations from './components/Animations.vue'
+import Http from './components/Http.vue'
 export default {
   data () {
     return {
@@ -27,7 +29,8 @@ export default {
     'app-user': User,
     'app-quote-grid': QuoteGrid,
     'app-new-quote': NewQuote,
-    'animations': Animations
+    'animations': Animations,
+    'app-http': Http
   },
   methods: {
     quotePush (quote) {
