@@ -1,12 +1,12 @@
 <template>
 <div id="app">
   <div class="container">
+    <router-view></router-view>
         <animations></animations>
     <app-new-quote @newquoteadded="quotePush" :current="current" :max="max"></app-new-quote>
     <app-quote-grid :quotes="quotes"></app-quote-grid>
     <app-user></app-user>
     <app-http></app-http>
-     <router-view/>
   </div>
 </div>
 </template>
